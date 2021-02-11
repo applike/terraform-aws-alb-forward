@@ -14,3 +14,4 @@ jobs:
         with:
           working-dir: .
           output-file: README.md
+          git-push: true
