@@ -1,9 +1,6 @@
 ---
 name: misspell
-on:
-  push:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
   misspell:
@@ -12,9 +9,3 @@ jobs:
       - uses: actions/checkout@v2
       - name: misspell
         uses: reviewdog/action-misspell@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          locale: "US"
-          reporter: github-check
-          filter_mode: nofilter
-          level: error

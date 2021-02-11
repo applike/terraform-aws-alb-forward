@@ -1,9 +1,6 @@
 ---
 name: tfsec
-on:
-  push:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
   tfsec:
@@ -12,14 +9,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: setup Terraform
         uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 0.14.0
       - name: Terraform init
         run: terraform init --backend=false
       - name: tfsec
-        uses: reviewdog/action-tfsec@master
+        uses: reviewdog/action-tfsec@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-check
-          filter_mode: nofilter
-          level: error
