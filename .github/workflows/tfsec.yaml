@@ -7,7 +7,6 @@ on:
 
 jobs:
   tfsec:
-    name: runner / tfsec
     runs-on: ubuntu-latest
 
     steps:

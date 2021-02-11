@@ -6,7 +6,6 @@ on:
 
 jobs:
   release:
-    name: runner / release
     runs-on: ubuntu-latest
 
     steps:

@@ -7,7 +7,6 @@ on:
 
 jobs:
   tfdoc:
-    name: runner / tfdoc
     runs-on: ubuntu-latest
 
     steps:
