@@ -1,5 +1,10 @@
 name: tfdoc
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
 jobs:
   tfdoc:
     name: runner / tfdoc
