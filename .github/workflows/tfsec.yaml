@@ -1,17 +1,15 @@
----
 name: tfsec
 on: [push, pull_request]
-
 jobs:
   tfsec:
+    name: runner / tfsec
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: setup Terraform
-        uses: hashicorp/setup-terraform@v1
-      - name: Terraform init
-        run: terraform init --backend=false
+      - name: Clone repo
+        uses: actions/checkout@master
+
       - name: tfsec
-        uses: reviewdog/action-tfsec@v1
+        uses: reviewdog/action-tfsec@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.github_token }}

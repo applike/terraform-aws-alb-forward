@@ -1,0 +1,16 @@
+name: tfdoc
+on: [push, pull_request]
+jobs:
+  tfdoc:
+    name: runner / tfdoc
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@master
+
+      - name: Generate TF Docs
+        uses: terraform-docs/gh-actions@master
+        with:
+          working-dir: .
+          output-file: README.md

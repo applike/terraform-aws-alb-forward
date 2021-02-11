@@ -1,17 +1,15 @@
----
 name: tflint
 on: [push, pull_request]
-
 jobs:
   tflint:
+    name: runner / tflint
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: setup Terraform
-        uses: hashicorp/setup-terraform@v1
-      - name: Terraform init
-        run: terraform init --backend=false
+      - name: Clone repo
+        uses: actions/checkout@master
+
       - name: tflint
-        uses: reviewdog/action-tflint@v1
+        uses: reviewdog/action-tflint@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.github_token }}
