@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Generate TF Docs
-        uses: terraform-docs/gh-actions@master
+        uses: terraform-docs/gh-actions@v0
         with:
           working-dir: .
           output-file: README.md
