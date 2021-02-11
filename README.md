@@ -10,7 +10,7 @@
 ## Example
 ```hcl
 module "example" {
-  source  = "applike/terraform-aws-alb-forward/aws
+  source  = "applike/terraform-aws-alb-forward/aws"
   version = "X.X.X"
 }
 ```
