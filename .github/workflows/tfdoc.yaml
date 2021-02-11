@@ -19,3 +19,4 @@ jobs:
           working-dir: .
           output-file: README.md
           git-push: true
+          git-commit-message: "fix: terraform-docs"
